@@ -1,0 +1,840 @@
+/* ==========================================
+   GLOBAL RESET & BASIC STYLING
+   ========================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  /* border-style: solid;
+  border-color: black; */
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  color: #333;
+  background-color: #eaeaea;
+}
+img {
+  display: block;
+  max-width: 100%;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ==========================================
+   UTILITY CLASSES
+   ========================================== */
+.btn {
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+.btn--primary {
+  background-color:#e6e6e6;
+  color:#002b5c;
+  font-weight: 600;
+  border: 1px solid #023acd;
+}
+.btn--primary span {
+  color:#deb62b;
+}
+.btn--outline {
+  border: none;
+  background-color: white;
+  color: #023acd;
+}
+.btn--outline:hover {
+  background-color: white;
+}
+.btn--full {
+  width: 100%;
+  padding: 10px;
+}
+.btn--small {
+  padding: 10px 16px;
+  border-radius: 10rem;
+}
+.link-underline {
+  color: #023acd;
+  text-decoration: underline;
+}
+
+/* ==========================================
+   NAVBAR (HEADER)
+   ========================================== */
+.navbar {
+  background-color: #eaeaea;
+  display: flex;
+  align-items: center;
+  padding: 5px 30px;
+  border-bottom: 1px solid #e2e6ea;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+/* Make the logo + company name sit side-by-side */
+.navbar__logo {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* small space between logo image and text */
+}
+
+.navbar__logo img {
+  width: 50px;  /* or whatever size you prefer */
+  height: auto;
+}
+
+.navbar__company-name {
+  font-size: 1.80rem;
+  font-weight: bold;
+  font-weight: 1000;
+  color: #023acd; /* same blue brand color used elsewhere */
+}
+.navbar__company-name span{
+  font-size: 1.80rem;
+  font-weight: bold;
+  font-weight: 1000;
+  color: #00b1fe;
+}
+.navbar__menu {
+  margin-left: auto;
+  margin-right: 16px; /* small gap between menu and “WhatsApp Us” */
+}
+.navbar__menu ul {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+}
+.navbar__menu ul a {
+  color: #333;
+  font-size: 1rem;
+  transition: color 0.2s ease;
+}
+.navbar__menu ul a:hover {
+  color: #023acd;
+}
+.navbar__action .btn {
+  font-size: 0.9rem;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+/* ==========================================
+   HERO SECTION (HEADLINE + FEATURES + FORM)
+   ========================================== */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #f0f3fa;
+  padding: 70px 120px;
+  gap: 50px;
+}
+.hero__content {
+  flex: 1 1 400px;
+  max-width: 600px;
+}
+.hero__title {
+  font-size: 2rem;
+  color: #023acd;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+.hero__subtitle {
+  font-size: 1rem;
+  margin-bottom: 24px;
+  color: #555;
+}
+.hero__features-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(150px, 1fr));
+  gap: 12px 20px;
+}
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #555;
+  font-size: 0.95rem;
+}
+.feature-icon {
+  font-size: 1.2rem;
+  color: #023acd;
+}
+
+/* HERO FORM */
+.hero__form-wrapper {
+  flex: 1 1 300px;
+  max-width: 380px;
+}
+.hero__form {
+  background-color: #002b5c; /* darker navy */
+  border-radius: 16px;
+  padding: 32px;
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 40rem;
+}
+
+/* Title style */
+.hero__form-title {
+  font-size: 2rem;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 24px;
+  font-weight: 600;
+}
+
+/* Input fields with white border and rounded shape */
+.hero__form .form-input {
+  width: 100%;
+  padding: 12px 18px;
+  border: 2px solid #ffffff;
+  border-radius: 20px;
+  font-size: 1rem;
+  background-color: transparent;
+  color: #fff;
+}
+
+.hero__form .form-input::placeholder {
+  color: #ffffff;
+  opacity: 0.8;
+}
+
+.hero__form .form-input:focus {
+  outline: none;
+  border-color: #ffcc00;
+  box-shadow: 0 0 0 2px rgba(255, 204, 0, 0.3);
+}
+
+/* Form layout: 2 columns per row on wide screens */
+.hero__form .form-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.hero__form .form-row input {
+  flex: 1;
+}
+
+/* Checkbox container */
+.hero__form .form-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.hero__form .form-checkbox input[type="checkbox"] {
+  flex: none;
+  width: auto;
+}
+
+.hero__form .form-checkbox label {
+  flex: 1;
+}
+
+/* Checkbox label */
+.form-label--inline {
+  color: #ffffff;
+  font-size: 0.95rem;
+}
+.form-label--inline a {
+  color: #ffcc00; /* gold/yellow */
+  text-decoration: none;
+  font-weight: bold;
+}
+.form-label--inline a:hover {
+  text-decoration: underline;
+}
+
+/* Primary white pill-shaped submit button */
+.hero__form .btn--primary {
+  background-color:#e2e6ea;
+  color: #002b5c;
+  font-weight: 600;
+  border: none;
+  border-radius: 32px;
+  padding: 10px 0;
+  width: 12rem;  
+  font-size: 1.1rem;
+  transition: background 0.2s ease;
+}
+
+.hero__form .btn--primary:hover {
+  background-color:#e2e6ea;
+}
+
+/* Optional: add arrow icon */
+.hero__form .btn--primary::after {
+  content: " →";
+  color: #ffcc00;
+}
+
+/* ==========================================
+   FEATURES GRID (SIX SMALL CARDS)
+   ========================================== */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  background-color:#eaeaea;
+  padding: 48px 32px;
+  width: 70rem;
+  margin-left: 30vh;
+}
+.feature-card {
+  background-color: #f7f8fa;
+  border-radius: 15px;
+  padding: 24px;
+  text-align: center;
+}
+.feature-card__icon {
+  font-size: 2rem;
+  color: #023acd;
+  margin-bottom: 12px;
+}
+.feature-card__title {
+  font-size: 1.1rem;
+  color: #023acd;
+  margin-bottom: 8px;
+}
+.feature-card__desc {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* ==========================================
+   WHY CHOOSE US
+   ========================================== */
+.why-choose-us {
+  background-color: #f0f3fa;
+  padding: 60px;
+}
+.section-title {
+  font-size: 3.0rem;
+  color: #023acd;
+  text-align: center;
+}
+.why-choose-us__list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.why-item {
+  display: flex;
+  gap: 16px;
+}
+.why-item__image img {
+  border-radius: 4px;
+  width: 100px;
+  height: 80px;
+  object-fit: cover;
+}
+.why-item__content {
+  flex: 1;
+}
+.why-item__number {
+  font-weight: bold;
+  color: #023acd;
+  margin-right: 8px;
+}
+.why-item__title {
+  font-size: 1rem;
+  color: #023acd;
+  margin-bottom: 6px;
+  display: inline-block;
+}
+.why-item__text {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.4;
+}
+.why-item__text a {
+  font-weight: bold;
+  color: #023acd;
+}
+
+/* ==========================================
+   BENEFITS SECTION
+   ========================================== */
+.benefits {
+  background-color: #fff;
+  padding: 48px 32px;
+}
+.benefits__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.benefit-card {
+  background-color: #f0f3fa;
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+}
+.benefit-card img {
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+.benefit-card figcaption {
+  font-size: 0.9rem;
+  color: #023acd;
+}
+
+/* ==========================================
+   FAQ SECTION (Accordion)
+   ========================================== */
+.faqs {
+  background-color: #f0f3fa;
+  padding: 48px 32px;
+}
+.faqs__image img {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto 24px;
+  display: block;
+  border-radius: 8px;
+}
+.faqs__accordion {
+  max-width: 700px;
+  margin: 0 auto;
+}
+.accordion {
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  padding: 16px 24px;
+  width: 100%;
+  text-align: left;
+  border: 1px solid #e2e6ea;
+  border-radius: 4px;
+  outline: none;
+  font-size: 0.95rem;
+  transition: background-color 0.2s ease;
+  margin-bottom: 8px;
+}
+.accordion:hover,
+.accordion.active {
+  background-color: #e6e9f5;
+}
+.panel {
+  background-color: #fff;
+  border-left: 4px solid #023acd;
+  border-top: 1px solid #e2e6ea;
+  border-right: 1px solid #e2e6ea;
+  border-bottom: 1px solid #e2e6ea;
+  border-radius: 0 0 4px 4px;
+  padding: 16px 24px;
+  display: none;
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 12px;
+}
+.accordion--load-more {
+  text-align: center;
+  margin-top: 16px;
+}
+.accordion--load-more a {
+  color: #023acd;
+  font-size: 0.95rem;
+}
+
+/* ==========================================
+   SECOND DEMO FORM (FULL-WIDTH)
+   ========================================== */
+.demo-form--full {
+  background-color:#002b5c;
+  color:white;  
+  padding: 48px 32px;
+}
+.section-title-2 {
+  font-size: 4.0rem;
+  color:white;
+  text-align: center;
+}
+.demo-form--subtitle {
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 35px;
+  color: #e6e9f5;
+}
+.demo-form--subtitle span {
+  color:#deb62b;
+}
+.demo-form {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  margin-bottom: 30px;
+}
+.form-row {
+  display: flex;
+  flex-direction: column;
+}
+.form-textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 10px 12px;
+  margin-top: 4px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  resize: vertical;
+}
+.form-textarea:focus {
+  outline: none;
+  border-color: #fff;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
+}
+.demo-form--full .form-row label {
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+/* Checkbox container for demo form */
+.demo-form--full .form-checkbox {
+  display: flex;
+  margin-top: 20px;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.demo-form--full .form-checkbox input[type="checkbox"] {
+  flex: none;
+  width: auto;
+}
+
+.demo-form--full .form-checkbox label {
+  flex: 1;
+}
+
+.demo-form--full .form-label--inline {
+  font-size: 0.9rem;
+  color: #fff;
+}
+.demo-form--full .form-label--inline a {
+  color:#deb62b;
+}
+.demo-form--full .btn--full {
+  margin: 0 auto;
+  max-width: 200px;
+  border-radius: 25px;
+}
+
+/* ==========================================
+   MANAGING ART SECTION
+   ========================================== */
+.managing-art {
+  background-color: #fff;
+  padding: 48px 32px;
+  text-align: center;
+}
+
+.managing-art .section-title {
+  margin-bottom: 40px;
+}
+
+.managing-art__container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1px;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.managing-art__content {
+  flex: 1 1 400px;
+  max-width: 500px;
+  text-align: left;
+}
+
+.managing-art__list {
+  list-style: none;
+  margin-bottom: 24px;
+  font-size: 1.3rem;
+  color: #555;
+  line-height: 1.4;
+}
+
+.managing-art__list li {
+  margin-bottom: 12px;
+}
+
+.managing-art__image {
+  flex: 0 0 550px;
+}
+
+.managing-art__image img {
+  border-radius: 20px;
+  max-width: 80%;
+}
+
+/* ==========================================
+   SIMPLIFY WORKFLOW SECTION
+   ========================================== */
+.simplify-workflow {
+  background-color: #f0f3fa;
+  padding: 48px 32px;
+  text-align: center;
+}
+
+.simplify-workflow .section-title {
+  margin-bottom: 40px;
+}
+
+.simplify-workflow__container {
+  display: flex;
+  flex-wrap: wrap-reverse; /* This reverses the order on mobile */
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.simplify-workflow__content {
+  flex: 1 1 500px;
+  max-width: 500px;
+  text-align: left;
+  order: 1; /* Ensures content comes first in the flow */
+}
+
+.simplify-workflow__list {
+  list-style: none;
+  font-size: 1.3rem;
+  color: #555;
+  line-height: 1.4;
+  margin-bottom: 24px;
+}
+
+.simplify-workflow__list li {
+  margin-bottom: 12px;
+}
+
+.simplify-workflow__image {
+  flex: 0 0 550px;
+  order: 2; /* Ensures image comes second in the flow */
+}
+
+.simplify-workflow__image img {
+  border-radius: 8px;
+  max-width: 100%;
+}
+
+/* For larger screens, we'll override the mobile order */
+@media (min-width: 768px) {
+  .simplify-workflow__container {
+    flex-wrap: nowrap;
+  }
+  .simplify-workflow__content {
+    order: 1;
+  }
+  .simplify-workflow__image {
+    order: 2;
+  }
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+.footer {
+  background-color: #fff;
+  padding: 40px 20px;
+  border-top: 1px solid #e2e6ea;
+}
+
+.footer__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+/* Left column styling */
+.footer__left {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer__logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.footer__logo img {
+  width: 50px;
+  height: auto;
+}
+
+.footer__company-name {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #023acd;
+}
+
+.footer__company-name span {
+  color: #00b1fe;
+}
+
+.footer__copyright {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+/* Middle column styling */
+.footer__middle {
+  flex: 2;
+  min-width: 300px;
+}
+
+.footer__links {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px 20px;
+}
+
+.footer__link {
+  color: #023acd;
+  font-size: 0.85rem;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.footer__link:hover {
+  text-decoration: underline;
+}
+
+/* Right column styling */
+.footer__right {
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer__demo-title {
+  font-size: 1.2rem;
+  color: #023acd;
+  margin-bottom: 15px;
+  text-align: right;
+}
+
+.footer__demo-form {
+  display: flex;
+  gap: 10px;
+}
+
+.footer__demo-form .form-input {
+  flex: 1;
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.footer__demo-form .btn--primary {
+  background-color: #023acd;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.footer__demo-form .btn--primary:hover {
+  background-color: #002b5c;
+}
+
+/* ==========================================
+   RESPONSIVE BREAKPOINTS
+   ========================================== */
+@media (max-width: 1024px) {
+  .hero,
+  .managing-art,
+  .simplify-workflow {
+    flex-direction: column;
+    align-items: center;
+  }
+  .features-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+}
+@media (max-width: 768px) {
+  .navbar__menu ul {
+    gap: 16px;
+  }
+  .hero {
+    padding: 32px 24px;
+  }
+  .features-grid {
+    gap: 16px;
+  }
+  .why-choose-us__list {
+    gap: 16px;
+  }
+  .benefits__grid {
+    gap: 16px;
+  }
+  .demo-form--full {
+    padding: 32px 24px;
+  }
+}
+@media (max-width: 480px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .navbar__action {
+    width: 100%;
+    text-align: right;
+  }
+  .hero {
+    padding: 24px 16px;
+  }
+  .hero__features-list {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+  .why-choose-us__list,
+  .benefits__grid,
+  .demo-form--full .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .managing-art,
+  .simplify-workflow {
+    padding: 24px 16px;
+  }
+  .footer__top {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
